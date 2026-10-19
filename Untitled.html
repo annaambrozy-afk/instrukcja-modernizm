@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projekt: Escape Room - Modernizm w Architekturze</title>
+    <style>
+        :root {
+            --primary-color: #1a252f;
+            --accent-blue: #2980b9;
+            --accent-green: #27ae60;
+            --accent-orange: #d35400;
+            --accent-purple: #8e44ad;
+            --accent-red: #c0392b;
+            --bg-gray: #f4f6f7;
+            --card-bg: #ffffff;
+            --text-color: #2c3e50;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-gray);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            padding: 35px;
+        }
+
+        header {
+            text-align: center;
+            border-bottom: 4px solid var(--primary-color);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            color: #7f8c8d;
+            font-weight: 500;
+        }
+
+        .instruction-card {
+            background: #eef2f5;
+            border-left: 6px solid var(--accent-blue);
+            border-radius: 6px;
+            padding: 20px;
+            margin-bottom: 35px;
+        }
+
+        .instruction-card h2 {
+            color: var(--accent-blue);
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .instruction-list {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .instruction-list li {
+            margin-bottom: 8px;
+        }
+
+        .badge-info {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .category-block {
+            border-radius: 8px;
+            margin-bottom: 25px;
+            overflow: hidden;
+            border: 1px solid #e1e8ed;
+            background: #fff;
+        }
+
+        .category-header {
+            padding: 12px 20px;
+            color: white;
+            font-weight: bold;
+            font-size: 1.1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Kolory Kategorii */
+        .cat-1 .category-header { background-color: var(--accent-blue); }
+        .cat-2 .category-header { background-color: var(--accent-green); }
+        .cat-3 .category-header { background-color: var(--accent-orange); }
+        .cat-4 .category-header { background-color: var(--accent-purple); }
+        .cat-5 .category-header { background-color: var(--accent-red); }
+
+        .questions-list {
+            list-style: none;
+            padding: 15px 20px;
+        }
+
+        .questions-list li {
+            padding: 12px 0;
+            border-bottom: 1px dashed #e1e8ed;
+        }
+
+        .questions-list li:last-child {
+            border-bottom: none;
+        }
+
+        .q-number {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-right: 6px;
+        }
+
+        .answer {
+            display: block;
+            margin-top: 5px;
+            font-size: 0.9rem;
+            color: #27ae60;
+            font-weight: 600;
+            background: #eafaf1;
+            padding: 4px 10px;
+            border-radius: 4px;
+            width: fit-content;
+        }
+
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #e1e8ed;
+            color: #95a5a6;
+            font-size: 0.9rem;
+        }
+
+        @media print {
+            body { background: white; padding: 0; }
+            .container { box-shadow: none; padding: 0; max-width: 100%; }
+            .category-block { break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>Złam Kod Modernizmu 🏛️</h1>
+        <p>Projekt Szkolny: Cyfrowy Escape Room w Genially</p>
+    </header>
+
+    <div class="instruction-card">
+        <h2>📋 Instrukcja dla Zespołu</h2>
+        <p>Waszym zadaniem jest stworzenie własnego, 10-etapowego Escape Roomu w <strong>Genially</strong> na podstawie artykułu <em>„Modernizm w architekturze”</em> (Architrav).</p>
+        <br>
+        <p><strong>Wtyczne dotyczące wyboru pytań:</strong></p>
+        <ul class="instruction-list">
+            <li>Wybierzcie z poniższego Banku Pytań <strong>dokładnie po 2 pytania z każdej z 5 kategorii</strong> (łącznie 10 pytań).</li>
+            <li>Przekształćcie pytania w zadania w Genially – poprawna odpowiedź musi dawać <strong>cyfrę lub literę</strong> do szyfru/kłódki!</li>
+            <li>Ustawcie końcowy kod wyjścia, który gracz musi złamać, aby ukończyć Waszą stację.</li>
+        </ul>
+        <span class="badge-info">Wymagania: 5 Kategorii × 2 Pytania = 10 Zadań w Escape Roomie</span>
+    </div>
+
+    <!-- KATEGORIA 1 -->
+    <div class="category-block cat-1">
+        <div class="category-header">
+            <span>Kategoria I: Cechy charakterystyczne i zasady</span>
+            <span>Wybierzcie 2 pytania</span>
+        </div>
+        <ul class="questions-list">
+            <li>
+                <span class="q-number">1.</span> Jakie podejście do ozdób i ornamentów mieli architekci modernizmu?
+                <span class="answer">Odp: Odrzucali ornamenty/ozdoby, uważali je za zbędne</span>
+            </li>
+            <li>
+                <span class="q-number">2.</span> Jakie dwa najważniejsze elementy decydowały o wyglądzie budynku modernistycznego według zasady funkcjonalizmu?
+                <span class="answer">Odp: Funkcja i konstrukcja</span>
+            </li>
+            <li>
+                <span class="q-number">3.</span> Czym różniły się dachy budynków modernistycznych od budynków tradycyjnych?
+                <span class="answer">Odp: Były płaskie, a nie spadziste</span>
+            </li>
+            <li>
+                <span class="q-number">4.</span> Jaki typ okien wprowadzili moderniści, aby wpuścić do wnętrz jak najwięcej światła?
+                <span class="answer">Odp: Okna wstęgowe / poziome</span>
+            </li>
+            <li>
+                <span class="q-number">5.</span> Z jakiego powodu elewacja w modernizmie mogła być całkowicie przeszklona i nie musiała dźwigać budynku?
+                <span class="answer">Odp: Ponieważ ciężar opierał się na wewnętrznym szkieletowo-słupowym układzie</span>
+            </li>
+            <li>
+                <span class="q-number">6.</span> Co według architektów modernizmu miało być najważniejsze – wygląd zewnętrzny czy użyteczność wnętrza?
+                <span class="answer">Odp: Użyteczność / wygoda / funkcja</span>
+            </li>
+        </ul>
+    </div>
+
+    <!-- KATEGORIA 2 -->
+    <div class="category-block cat-2">
+        <div class="category-header">
+            <span>Kategoria II: Terminologia i hasła-klucze</span>
+            <span>Wybierzcie 2 pytania</span>
+        </div>
+        <ul class="questions-list">
+            <li>
+                <span class="q-number">7.</span> Jak brzmi słynne hasło Louisa Sullivana opisujące zależność między wyglądem a przeznaczeniem budynku?
+                <span class="answer">Odp: „Forma podąża za funkcją”</span>
+            </li>
+            <li>
+                <span class="q-number">8.</span> Jak brzmi słynny slogan Miesa van der Rohe podsumowujący minimalizm w architekturze?
+                <span class="answer">Odp: „Mniej znaczy więcej”</span>
+            </li>
+            <li>
+                <span class="q-number">9.</span> Jak nazywa się 5 charakterystycznych żelbetowych słupów, na których Le Corbusier unosił budynek nad ziemią?
+                <span class="answer">Odp: Pilotis</span>
+            </li>
+            <li>
+                <span class="q-number">10.</span> Jak nazywano modernistyczną koncepcję bloku mieszkalnego, który miał zapewniać mieszkańcom wszystko do życia?
+                <span class="answer">Odp: „Maszyna do mieszkania”</span>
+            </li>
+            <li>
+                <span class="q-number">11.</span> Jak nazywa się system proporcji ludzkiego ciała stworzony przez Le Corbusiera do projektowania mebli i mieszkań?
+                <span class="answer">Odp: Modulor</span>
+            </li>
+            <li>
+                <span class="q-number">12.</span> Jakim mianem określa się kierunek w modernizmie, który stawiał na surowy, nieotynkowany beton?
+                <span class="answer">Odp: Brutalizm</span>
+            </li>
+        </ul>
+    </div>
+
+    <!-- KATEGORIA 3 -->
+    <div class="category-block cat-3">
+        <div class="category-header">
+            <span>Kategoria III: Twórcy i architekci</span>
+            <span>Wybierzcie 2 pytania</span>
+        </div>
+        <ul class="questions-list">
+            <li>
+                <span class="q-number">13.</span> Który francuski architekt stworzył słynną zasadę „5 punktów nowoczesnej architektury”?
+                <span class="answer">Odp: Le Corbusier</span>
+            </li>
+            <li>
+                <span class="q-number">14.</span> Który architekt zasłynął z projektowania domów wkomponowanych w naturę (np. Dom nad wodospadem)?
+                <span class="answer">Odp: Frank Lloyd Wright</span>
+            </li>
+            <li>
+                <span class="q-number">15.</span> Który niemiecki architekt był dyrektorem szkoły Bauhaus i projektantem jej siedziby w Dessau?
+                <span class="answer">Odp: Walter Gropius</span>
+            </li>
+            <li>
+                <span class="q-number">16.</span> Który architekt zasłynął z projektowania budynków ze stali i szkła (np. Pawilonu w Barcelonie)?
+                <span class="answer">Odp: Ludwig Mies van der Rohe</span>
+            </li>
+            <li>
+                <span class="q-number">17.</span> Jak nazywała się słynna niemiecka szkoła projektowania i architektury działająca od 1919 roku?
+                <span class="answer">Odp: Bauhaus</span>
+            </li>
+        </ul>
+    </div>
+
+    <!-- KATEGORIA 4 -->
+    <div class="category-block cat-4">
+        <div class="category-header">
+            <span>Kategoria IV: Materiały i technologia</span>
+            <span>Wybierzcie 2 pytania</span>
+        </div>
+        <ul class="questions-list">
+            <li>
+                <span class="q-number">18.</span> Z jakich dwóch podstawowych materiałów wykonywano nowatorską konstrukcję żelbetową?
+                <span class="answer">Odp: Z betonu i stali</span>
+            </li>
+            <li>
+                <span class="q-number">19.</span> Wymień trzy flagowe materiały budowlane, z których najchętniej korzystali architekci modernizmu.
+                <span class="answer">Odp: Beton/żelbet, stal, szkło</span>
+            </li>
+            <li>
+                <span class="q-number">20.</span> Dlaczego zastosowanie szkieletu żelbetowego pozwoliło na rezygnację z grubych ścian nośnych?
+                <span class="answer">Odp: Ponieważ cały ciężar budynku spoczywał na żelbetowym/stalowym szkieledzie</span>
+            </li>
+            <li>
+                <span class="q-number">21.</span> Jakie rozwiązanie technologiczne pozwoliło na tworzenie otwartych, dowolnie dzielonych przestrzeni wewnątrz budynków?
+                <span class="answer">Odp: Brak wewnętrznych ścian nośnych / konstrukcja słupowa (wolny plan)</span>
+            </li>
+        </ul>
+    </div>
+
+    <!-- KATEGORIA 5 -->
+    <div class="category-block cat-5">
+        <div class="category-header">
+            <span>Kategoria V: Ikoniczne budynki i obiekty</span>
+            <span>Wybierzcie 2 pytania</span>
+        </div>
+        <ul class="questions-list">
+            <li>
+                <span class="q-number">22.</span> Jak nazywa się słynna biała willa na słupach pod Paryżem, będąca wzorcowym przykładem 5 punktów Le Corbusiera?
+                <span class="answer">Odp: Villa Savoye</span>
+            </li>
+            <li>
+                <span class="q-number">23.</span> Jak nazywa się ogromny blok mieszkalny w Marsylii, zaprojektowany przez Le Corbusiera dla ponad 1600 mieszkańców?
+                <span class="answer">Odp: Jednostka Marsylska / Unité d'Habitation</span>
+            </li>
+            <li>
+                <span class="q-number">24.</span> W jakim mieście znajduje się słynny minimalistyczny pawilon ze stali, szkła i marmuru zaprojektowany przez Miesa van der Rohe?
+                <span class="answer">Odp: W Barcelonie (Pawilon w Barcelonie)</span>
+            </li>
+            <li>
+                <span class="q-number">25.</span> Jak nazywa się słynny dom zaprojektowany przez Franka Lloyda Wrighta, zbudowany bezpośrednio nad wodospadem?
+                <span class="answer">Odp: Dom nad wodospadem (Fallingwater)</span>
+            </li>
+            <li>
+                <span class="q-number">26.</span> Co Le Corbusier zaplanował na dachu Villi Savoye zamiast tradycyjnego poddasza?
+                <span class="answer">Odp: Płaski dach z ogrodem / ogród na dachu</span>
+            </li>
+        </ul>
+    </div>
+
+    <footer>
+        <p>Materiały źródłowe: Artykuł <em>„Modernizm w architekturze”</em> – Architrav | Projekt Edukacyjny dla Technikum</p>
+    </footer>
+
+</div>
+
+</body>
+</html>
